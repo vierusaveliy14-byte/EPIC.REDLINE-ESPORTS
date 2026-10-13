@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0d">
+<meta name="description" content="REDLINE CUP — турнирное сообщество Standoff 2. Формат 5×5, 8 команд.">
+<title>REDLINE CUP — Standoff 2</title>
+<style>
+:root{--bg:#09090c;--panel:#121218;--panel2:#191920;--red:#f02b38;--red2:#ff5360;--white:#f7f7fb;--muted:#aaaab6;--line:#303039;--green:#56e0a0}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#3a1018 0,transparent 35%),var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#09090de8;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:1000;letter-spacing:1.5px;font-size:19px;white-space:nowrap}.brand span{color:var(--red)}.navlinks{display:flex;gap:22px;color:#d0d0d8;font-size:13px}.navlinks a:hover{color:white}.menu{display:none}
+.hero{padding:64px 0 52px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.eyebrow{color:var(--red2);font-size:11px;letter-spacing:2.5px;font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(43px,7vw,78px);line-height:.94;margin:15px 0;text-transform:uppercase;letter-spacing:-3px}.hero h1 span{color:var(--red)}.lead{color:#bdbdc7;line-height:1.75;max-width:570px}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:10px;padding:13px 17px;font-weight:850;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;cursor:pointer}.primary{background:var(--red);color:white;box-shadow:0 8px 28px #f02b3830}.primary:hover{background:var(--red2)}.secondary{background:#ffffff08;color:white;border:1px solid #ffffff24}.micro{font-size:12px;color:#9696a2;margin-top:17px}
+.poster{min-height:335px;border:1px solid #ffffff20;border-radius:20px;padding:23px;position:relative;overflow:hidden;background:linear-gradient(145deg,#2a1015,#111116 62%);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 25px 70px #0008}.poster:before{content:"";position:absolute;width:270px;height:270px;border:35px solid #f02b3820;transform:rotate(35deg);right:-70px;top:-75px}.poster>*{position:relative}.poster-top{display:flex;justify-content:space-between;gap:10px;color:#dddde4;font-size:10px;letter-spacing:1.3px}.pill{border:1px solid #ff536055;background:#f02b381c;color:#ff7c85;border-radius:30px;padding:6px 9px;font-size:10px;white-space:nowrap}.vs{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:30px 0}.team{font-size:clamp(20px,3vw,29px);font-weight:1000;line-height:1.1}.team small{display:block;color:#a4a4af;font-size:9px;letter-spacing:2px;margin-top:9px}.versus{font-weight:1000;font-style:italic;color:var(--red);font-size:27px}.poster-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;border-top:1px solid #ffffff18;padding-top:18px}.stat strong{display:block;font-size:20px}.stat span{font-size:9px;color:#a6a6b0;letter-spacing:1.5px}
+.section{padding:36px 0 44px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:21px}.section h2{font-size:clamp(26px,4vw,37px);margin:8px 0}.muted{color:var(--muted);line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#17171e,#101014);border:1px solid #ffffff12;border-radius:15px;padding:21px}.icon{font-size:25px}.card h3{margin:13px 0 8px}.card p{color:#b5b5bf;line-height:1.65;font-size:14px;margin:0}.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.slot{background:#121218;border:1px solid #ffffff14;border-radius:13px;padding:16px;min-height:88px}.num{font-size:10px;letter-spacing:1.7px;color:var(--red2);font-weight:900}.slot strong{display:block;margin:10px 0 4px;font-size:14px}.slot small{color:#92929e}
+.callout{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px;border-radius:16px;border:1px solid #f02b3838;background:linear-gradient(100deg,#321016,#151116)}.callout h3{margin:0 0 7px;font-size:22px}.callout p{margin:0;color:#c5bfc5;font-size:14px;line-height:1.6}
+footer{border-top:1px solid #ffffff12;padding:24px 0 32px;color:#9696a2;font-size:11px;display:flex;justify-content:space-between;gap:18px;line-height:1.6}
+.notice{font-size:12px;color:#a8a8b4;line-height:1.6;margin-top:12px}
+@media(max-width:760px){.nav{min-height:62px}.navlinks{gap:12px;font-size:11px}.hero{padding:43px 0 28px;grid-template-columns:1fr;gap:24px}.poster{min-height:290px}.cards{grid-template-columns:1fr}.slots{grid-template-columns:repeat(2,1fr)}.section{padding:28px 0 32px}.section-head{align-items:flex-start;flex-direction:column}.callout{align-items:flex-start;flex-direction:column}.hero h1{letter-spacing:-2px}footer{flex-direction:column;gap:8px}}
+@media(max-width:390px){.navlinks{gap:8px;font-size:10px}.brand{font-size:16px}.poster{padding:18px}.poster-top{font-size:9px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span>RED</span>LINE <span style="color:#777">/ S2</span></a>
+<nav class="navlinks" aria-label="Основная навигация"><a href="#format">Формат</a><a href="#teams">Слоты</a><a href="#bracket">Сетка</a><a href="#register">Регистрация</a></nav>
+</div></header>
+<main>
+<section class="wrap hero">
+<div>
+<div class="eyebrow">Community esports • Season 01</div>
+<h1>STANDOFF 2<br><span>REDLINE CUP</span></h1>
+<p class="lead">Турнирный вызов для сильных составов. Собери пятёрку, отправь заявку и дождись подтверждения организатора. Всего восемь команд — одно чемпионское место.</p>
+<div class="actions"><a class="btn primary" href="#register">Зарегистрировать команду ↗</a><a class="btn secondary" href="#teams">Свободные слоты</a></div>
+<p class="micro">Формат 5×5 · 8 команд · Сначала заявка, затем подтверждение</p>
+</div>
+<div class="poster" aria-label="Постер REDLINE CUP">
+<div class="poster-top"><span>REDLINE CUP / S2</span><span class="pill">REGISTRATION OPEN</span></div>
+<div class="vs"><div class="team">TEAM<br>RED<small>FIGHT AS ONE</small></div><div class="versus">VS</div><div class="team" style="text-align:right">TEAM<br>BLACK<small>NO MERCY</small></div></div>
+<div class="poster-bottom"><div class="stat"><strong>5 × 5</strong><span>FORMAT</span></div><div class="stat"><strong>08</strong><span>TEAM SLOTS</span></div><div class="stat"><strong>🏆</strong><span>CHAMPION</span></div></div>
+</div>
+</section>
+<section class="wrap section" id="format">
+<div class="section-head"><div><div class="eyebrow">Tournament info</div><h2>Правила участия</h2></div><span class="pill">ЗАЯВКА БЕСПЛАТНАЯ</span></div>
+<div class="cards">
+<article class="card"><div class="icon">⚔️</div><h3>Формат 5×5</h3><p>В заявке укажи капитана и пятерых игроков. Проверь игровые ID перед отправкой.</p></article>
+<article class="card"><div class="icon">🏆</div><h3>8 команд</h3><p>Место в турнире считается подтверждённым только после ответа организатора. При заполнении слотов можно сформировать резерв.</p></article>
+<article class="card"><div class="icon">💰</div><h3>Призовой фонд</h3><p>Размер приза, расписание, правила матчей и способ выплаты организатор должен объявить до старта турнира.</p></article>
+</div>
+</section>
+<section class="wrap section" id="teams">
+<div class="section-head"><div><div class="eyebrow">Slots / 08</div><h2>Слоты команд</h2><p class="muted">Список здесь — информационный макет. Подтверждённые команды добавляются организатором после проверки заявок.</p></div></div>
+<div class="slots">
+<div class="slot"><div class="num">SLOT 01</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 02</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 03</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 04</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 05</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 06</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 07</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+<div class="slot"><div class="num">SLOT 08</div><strong>СВОБОДНО</strong><small>Ожидает команду</small></div>
+</div>
+</section>
+<section class="wrap section" id="bracket">
+<div class="section-head"><div><div class="eyebrow">Playoffs</div><h2>Сетка турнира</h2><p class="muted">Макет сетки на 8 команд. Организатор сможет заполнить названия и результаты, когда составы будут подтверждены.</p></div></div>
+<div class="bracket-grid">
+<div class="round"><h3>Четвертьфиналы</h3><div class="match"><b>Матч 1</b><span>Команда 1 <em>—</em> Команда 2</span></div><div class="match"><b>Матч 2</b><span>Команда 3 <em>—</em> Команда 4</span></div><div class="match"><b>Матч 3</b><span>Команда 5 <em>—</em> Команда 6</span></div><div class="match"><b>Матч 4</b><span>Команда 7 <em>—</em> Команда 8</span></div></div>
+<div class="round"><h3>Полуфиналы</h3><div class="match"><b>Матч 5</b><span>Победитель М1 <em>—</em> Победитель М2</span></div><div class="match"><b>Матч 6</b><span>Победитель М3 <em>—</em> Победитель М4</span></div></div>
+<div class="round"><h3>Финал</h3><div class="match final-match"><b>Матч 7</b><span>Победитель М5 <em>—</em> Победитель М6</span><small>🏆 Чемпион REDLINE CUP</small></div></div>
+</div>
+</section>
+<style>
+.bracket-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:center}.round{display:flex;flex-direction:column;gap:12px}.round h3{font-size:14px;color:#c7c7d0}.match{background:#131319;border:1px solid #ffffff18;border-left:3px solid var(--red);border-radius:10px;padding:13px;display:flex;flex-direction:column;gap:8px;font-size:12px}.match b{color:var(--red2);font-size:10px;letter-spacing:1px;text-transform:uppercase}.match span{line-height:1.6}.match em{font-style:normal;color:var(--red2);padding:0 4px}.match small{color:#a8a8b4}.final-match{border-color:#f02b3855;background:linear-gradient(145deg,#2b1016,#121218)}
+@media(max-width:700px){.bracket-grid{grid-template-columns:1fr}.round{gap:8px}.round h3{margin-bottom:0}}
+</style>
+<section class="wrap section" id="register">
+<div class="section-head"><div><div class="eyebrow">Join the cup</div><h2>Регистрация команды</h2><p class="muted">Заполни данные клана и пятерых игроков. Все поля обязательны.</p></div><span class="pill">5 × 5 / 8 КОМАНД</span></div>
+<div class="form-shell">
+<form id="registrationForm">
+<div class="form-grid">
+<div class="field"><label for="clan">Название клана *</label><input id="clan" name="clan" required maxlength="60" placeholder="Например, REDLINE"></div>
+<div class="field"><label for="tag">Тег клана *</label><input id="tag" name="tag" required maxlength="12" placeholder="Например, RED"></div>
+<div class="field"><label for="captain">Ник капитана *</label><input id="captain" name="captain" required maxlength="40"></div>
+<div class="field"><label for="captainId">ID капитана в игре *</label><input id="captainId" name="captainId" required maxlength="40"></div>
+<div class="field full"><label for="contact">Контакт капитана (Telegram или другой способ связи) *</label><input id="contact" name="contact" required maxlength="100" placeholder="@username или ссылка"></div>
+<div class="field"><label for="p1">Игрок 1 — ник и ID *</label><input id="p1" name="p1" required maxlength="80"></div>
+<div class="field"><label for="p2">Игрок 2 — ник и ID *</label><input id="p2" name="p2" required maxlength="80"></div>
+<div class="field"><label for="p3">Игрок 3 — ник и ID *</label><input id="p3" name="p3" required maxlength="80"></div>
+<div class="field"><label for="p4">Игрок 4 — ник и ID *</label><input id="p4" name="p4" required maxlength="80"></div>
+<div class="field full"><label for="p5">Игрок 5 — ник и ID *</label><input id="p5" name="p5" required maxlength="80"></div>
+<div class="field full"><label class="consent"><input type="checkbox" id="agree" required> Подтверждаю, что данные верны и команда согласна с правилами турнира. *</label></div>
+</div>
+<button class="btn primary" type="submit">Отправить заявку ↗</button>
+<p id="formStatus" class="notice" role="status">Демо-режим: заявка сохранится только в этом браузере и не будет отправлена организатору автоматически.</p>
+</form>
+</div>
+</section>
+<style>
+.form-shell{background:linear-gradient(145deg,#17171e,#101014);border:1px solid #ffffff16;border-radius:17px;padding:clamp(16px,4vw,26px);max-width:850px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#d6d6df;font-weight:700}
+.field input:not([type=checkbox]){width:100%;min-width:0;background:#09090d;border:1px solid #34343f;border-radius:9px;padding:13px;color:white;font:inherit;outline:none}
+.field input:focus{border-color:var(--red2);box-shadow:0 0 0 3px #f02b381b}.consent{display:flex;gap:9px;align-items:flex-start;font-weight:500!important;line-height:1.5}.consent input{margin-top:3px;accent-color:var(--red)}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+<script>
+(function(){
+ const form=document.getElementById('registrationForm');
+ if(!form)return;
+ form.addEventListener('submit',function(event){
+  event.preventDefault();
+  const status=document.getElementById('formStatus');
+  const data=Object.fromEntries(new FormData(form).entries());
+  data.createdAt=new Date().toISOString();
+  try{
+   const key='redline_cup_demo_submissions';
+   const old=JSON.parse(localStorage.getItem(key)||'[]');
+   old.push(data);
+   localStorage.setItem(key,JSON.stringify(old));
+   status.textContent='Демо-заявка сохранена в этом браузере. Важно: организатор не получит её автоматически — для общего приёма заявок нужна серверная база или внешний сервис.';
+   status.style.color='#ffb3b8';
+   form.reset();
+  }catch(e){
+   status.textContent='Не удалось сохранить заявку в этом браузере.';
+  }
+ });
+})();
+</script>
+</main>
+<footer class="wrap"><span>REDLINE CUP • STANDOFF 2 COMMUNITY TOURNAMENT</span><span>Неофициальный фанатский турнир. Не связан с правообладателями Standoff 2.</span></footer>
+</body></html>
